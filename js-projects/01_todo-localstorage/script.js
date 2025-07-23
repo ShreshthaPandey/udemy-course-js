@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const todoInput = document.getElementById("todo-input");
+ const todoInput = document.getElementById("todo-input");
   const addTaskButton = document.getElementById("add-task-btn");
   const todoList = document.getElementById("todo-list");
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     tasks.push(newTask);
     saveTasks();
-    renderTask(newTask);
+    renderTask(newTask); // so that no nbeed to refresh again agian
     todoInput.value = ""; //clear input
     console.log(tasks);
   });
@@ -52,3 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 });
+  
