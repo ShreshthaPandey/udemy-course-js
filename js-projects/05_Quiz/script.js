@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultContainer.classList.add("hidden");
     questionContainer.classList.remove("hidden");
     showQuestion();
-  }
+  } 
 
   function showQuestion() {
     nextBtn.classList.add("hidden");
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     questions[currentQuestionIndex].choices.forEach((choice) => {
       const li = document.createElement("li");
       li.textContent = choice;
-      li.addEventListener("click", () => selectAnswer(choice));
+      li.addEventListener("click", () => selectAnswer(choice)); // call back fn ...it avoid it executing it immediately ....hence passing the refernce of the fn
       choicesList.appendChild(li);
     });
   }
