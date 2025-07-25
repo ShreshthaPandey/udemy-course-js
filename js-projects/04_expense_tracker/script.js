@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   expenseForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = expenseNameInput.value.trim();
-    const amount = parseFloat(expenseAmountInput.value.trim());
+    const amount = parseFloat(expenseAmountInput.value.trim());// input of form is by default always a string
 
     if (name !== "" && !isNaN(amount) && amount > 0) {
       const newExpense = {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   expenseList.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
-      const expenseId = parseInt(e.target.getAttribute("data-id"));
+      const expenseId = parseInt(e.target.getAttribute("data-id")); // every input in form come  by default in string form
       expenses = expenses.filter((expense) => expense.id !== expenseId);
 
       saveExpensesTolocal();
